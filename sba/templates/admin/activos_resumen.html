@@ -1,0 +1,149 @@
+<div class="@container px-4 pb-4 grow">
+
+    <div class="bg-white flex flex-col grow lg:border lg:border-base-200 lg:overflow-hidden lg:rounded-default lg:shadow-xs dark:bg-base-900 dark:border-base-800">
+        <div>
+
+            <!-- ================= CARDS ================= -->
+            <div class="bg-white dark:bg-base-900 border border-base-200 rounded-default shadow-xs p-6">
+
+                {% if title %}
+                    <h3 class="text-base font-semibold mb-4">{{ title }}</h3>
+                {% endif %}
+
+                {% if cards %}
+                    <div class="flex flex-col gap-6 lg:flex-row flex-wrap">
+                        {% for card in cards %}
+                            <div class="bg-white flex flex-col grow p-6 relative rounded-default shadow-xs
+                                        dark:bg-base-900 dark:border-base-800 border border-base-200 lg:w-1/3">
+                                <div class="grow relative">
+                                    <p class="leading-relaxed mb-0 text-sm">{{ card.title }}</p>
+                                    <div class="font-semibold text-2xl tracking-tight">
+                                        {{ card.value }} 
+                                    </div>
+
+                                    {% if card.badge %}
+                                        <div class="absolute right-0 top-0">
+                                            <span class="inline-block font-semibold h-6 leading-6 px-2 rounded-default
+                                                text-[11px] uppercase whitespace-nowrap
+                                                {% if card.badge_color == 'success' %}
+                                                    bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400
+                                                {% elif card.badge_color == 'warning' %}
+                                                    bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-400
+                                                {% else %}
+                                                    bg-primary-100 text-primary-700 dark:bg-primary-500/20 dark:text-primary-400
+                                                {% endif %}">
+                                                {{ card.badge }}
+                                            </span>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- ================= INFORMACIÓN SOCIETARIA (Solo Activo) ================= -->
+            {% if tipo == "activo" %}
+            <div class="bg-white dark:bg-base-900 border border-base-200 rounded-default shadow-xs p-6 mt-6">
+
+                <div class="border-b border-base-200 flex flex-row items-center mb-6 -mt-6 -mx-6 py-4 px-6 dark:border-base-800">
+                    <h2 class="font-semibold text-[15px]">
+                        Información Societaria
+                    </h2>
+                </div>
+
+                <div class="grow relative">
+
+                    <div class="font-semibold text-xl mb-4">
+                        Valor Residual: {{ punto_equilibrio }} USD
+                    </div>
+
+                    <p class="text-sm mb-4">
+                        Este activo representa una proporción del capital social basada en su valor en libros.
+                    </p>
+
+                    <div class="bg-base-200 dark:bg-base-800 h-px my-6"></div>
+
+                    <div class="flex flex-col gap-4">
+
+                        <div class="flex justify-between text-sm">
+                            <span>Total Acciones Emitidas</span>
+                            <strong>{{ instance.total_shares_issued }}</strong>
+                        </div>
+
+                        <div class="flex justify-between text-sm">
+                            <span>Valor Nominal por Acción</span>
+                            <strong>{{ instance.nominal_value_per_share }}</strong>
+                        </div>
+
+                        <div class="flex justify-between text-sm">
+                            <span>Capital Social</span>
+                            <strong>{{ instance.total_share_capital }}</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- ================= INFORMACIÓN PASIVO (Solo Pasivo) ================= -->
+            {% if tipo == "pasivo" %}
+            <div class="bg-white dark:bg-base-900 border border-base-200 rounded-default shadow-xs p-6 mt-6">
+
+                <div class="border-b border-base-200 flex flex-row items-center mb-6 -mt-6 -mx-6 py-4 px-6 dark:border-base-800">
+                    <h2 class="font-semibold text-[15px]">
+                        Información del Pasivo
+                    </h2>
+                </div>
+
+                <div class="flex flex-col gap-4">
+
+                    <div class="flex justify-between text-sm">
+                        <span>Acreedor</span>
+                        <strong>{{ instance.creditor }}</strong>
+                    </div>
+
+                    <div class="flex justify-between text-sm">
+                        <span>Fecha de Vencimiento</span>
+                        <strong>{{ instance.due_date }}</strong>
+                    </div>
+
+                    <div class="flex justify-between text-sm">
+                        <span>Tasa de Interés</span>
+                        <strong>{{ instance.interest_rate }}%</strong>
+                    </div>
+
+                    <div class="flex justify-between text-sm">
+                        <span>Saldo Pendiente</span>
+                        <strong>{{ instance.saldo_pendiente }}</strong>
+                    </div>
+
+                    <div class="flex justify-between text-sm">
+                        <span>Interés Calculado</span>
+                        <strong>{{ instance.interes_calculado }}</strong>
+                    </div>
+
+                    <div class="flex justify-between text-sm">
+                        <span>Total Adeudado</span>
+                        <strong>{{ instance.total_adeudado }}</strong>
+                    </div>
+
+                    <div class="flex justify-between text-sm">
+                        <span>Acciones Potenciales</span>
+                        <strong>{{ instance.acciones_potenciales }}</strong>
+                    </div>
+
+                    <div class="flex justify-between text-sm">
+                        <span>% Dilución Potencial</span>
+                        <strong>{{ instance.porcentaje_dilucion_potencial }}%</strong>
+                    </div>
+
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>

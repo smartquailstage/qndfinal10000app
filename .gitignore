@@ -1,0 +1,20 @@
+# Python / Entorno virtual
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+db.sqlite3
+media/
+staticfiles/
+.env
+*.pem
+*.p12
+*.log
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store

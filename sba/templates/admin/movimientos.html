@@ -1,0 +1,68 @@
+<div class="@container px-4 pb-4 grow">
+
+    <div class="{% if card_included == 1 %}-m-6{% else %} bg-white flex flex-col grow lg:border lg:border-base-200 lg:overflow-hidden lg:rounded-default lg:shadow-xs{% endif %} lg:dark:border-base-800 dark:bg-base-900">
+        <div {% if height %}style="max-height: {{ height }}px;" data-simplebar{% endif %}>
+
+            <!-- ============================= -->
+            <!-- CARDS DE RESUMEN (IVA) -->
+            <!-- ============================= -->
+            <div class="bg-white dark:bg-base-900 border border-base-200 rounded-default shadow-xs p-6">
+
+                {% if title %}
+                    <h3 class="text-base font-semibold mb-4">{{ title }}</h3>
+                {% endif %}
+
+                {% if cards %}
+                    <div class="flex flex-col gap-6 lg:flex-row">
+                        {% for card in cards %}
+                            <div class="bg-white block flex flex-col grow overflow-hidden p-6 relative rounded-default shadow-xs
+                                        dark:bg-base-900 dark:border-base-800 border border-base-200 lg:w-1/3">
+                                
+                                <div class="grow relative">
+                                    <p class="leading-relaxed mb-0 text-sm">
+                                        {{ card.title }}
+                                    </p>
+
+                                    <div class="font-semibold text-2xl text-font-important-light tracking-tight dark:text-font-important-dark">
+                                        ${{ card.value|floatformat:2 }}
+                                    </div>
+
+                                    {% if card.badge %}
+                                        <div class="absolute right-0 top-0">
+                                            <span class="inline-block font-semibold h-6 leading-6 px-2 rounded-default
+                                                text-[11px] uppercase whitespace-nowrap
+
+                                                {% if card.badge_color == 'success' %}
+                                                    bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400
+
+                                                {% elif card.badge_color == 'warning' %}
+                                                    bg-yellow-100 text-yellow-700 dark:bg-yellow-500/20 dark:text-yellow-400
+
+                                                {% elif card.badge_color == 'danger' %}
+                                                    bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400
+
+                                                {% else %}
+                                                    bg-primary-100 text-primary-700 dark:bg-primary-500/20 dark:text-primary-400
+                                                {% endif %}
+                                            ">
+                                                {{ card.badge }}
+                                            </span>
+                                        </div>
+                                    {% endif %}
+                                </div>
+
+                                {% if card.footer %}
+                                    <div class="border-t border-base-200 flex items-center -mb-6 -mx-6 mt-6 pb-2 pt-2 px-6 text-sm dark:border-base-800">
+                                        <span>{{ card.footer }}</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+
+        </div>
+    </div>
+</div>

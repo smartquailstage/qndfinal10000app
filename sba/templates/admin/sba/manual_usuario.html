@@ -1,0 +1,372 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block title %}Manual de Usuario y Guía Analítica | SmartBusinessAnalytics{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+    <!-- Tarjeta Principal del Manual -->
+    <div class="bg-white block flex flex-col grow overflow-hidden p-6 relative rounded-default shadow-xs dark:bg-base-900 dark:border-base-800 border border-base-200">
+        
+        <!-- Cabecera -->
+        <div class="border-b border-base-200 flex flex-row items-center justify-between mb-6 -mt-6 -mx-6 py-4 px-6 dark:border-base-800">
+            <h2 class="font-semibold text-[16px] text-important flex items-center gap-2">
+                <span class="material-symbols-outlined">menu_book</span>
+                Manual de Operación y Guía del Sistema
+            </h2>
+            <span class="text-xs px-2.5 py-1 bg-primary-50 dark:bg-primary-950 text-primary-600 dark:text-primary-400 rounded-full font-medium">SBA v1.0</span>
+        </div>
+
+        <!-- Contenido del Manual -->
+        <div class="prose dark:prose-invert max-w-none space-y-6 text-default">
+            
+            <!-- Introducción General -->
+            <div>
+                <h3 class="text-base font-semibold text-important mb-2">Introducción al Sistema</h3>
+                <p class="text-sm text-subtle leading-relaxed">
+                    <strong>SmartBusinessAnalytics EAP</strong> es un gestor de recursos financieros y económicos diseñado para agilizar los procesos transaccionales de las empresas, con un enfoque moderno y adaptado a la realidad competitiva del mercado actual. El sistema centraliza la analítica financiera, el control de movimientos de ingresos y egresos, y la gestión transaccional de cajas de forma automatizada y segura.
+                </p>
+            </div>
+
+            <hr class="border-base-200 dark:border-base-800">
+
+            <!-- 1. El Concepto de "Moderno" en el Ámbito Contable -->
+            <div>
+                <h3 class="text-base font-semibold text-important mb-2">1. El Concepto de "Moderno" en el Ámbito Contable</h3>
+                <p class="text-sm text-subtle leading-relaxed mb-3">
+                    En el diseño de sistemas ERP/EAP, la contabilidad moderna abandona los esquemas tradicionales estáticos para adoptar un enfoque dinámico, en tiempo real y orientado a eventos transaccionales a través de los siguientes pilares:
+                </p>
+                <ul class="list-disc pl-5 text-sm text-subtle space-y-2">
+                    <li><strong>Arquitectura Event-Driven (Basada en Eventos):</strong> Cada operación (apertura de turno, cobro o compra) genera automáticamente el impacto contable sin intervención manual.</li>
+                    <li><strong>Integración Operativa-Contable Directa:</strong> Sin fricción ni separación entre lo que ocurre en el punto de venta y los libros del departamento financiero.</li>
+                    <li><strong>Analítica Prescriptiva y Descriptiva:</strong> Transforma la transaccionalidad en tableros de control para la toma de decisiones estratégicas inmediatas.</li>
+                    <li><strong>Trazabilidad y No Repudiación:</strong> Registro inmutable y auditoría estricta para prevenir fugas de capital.</li>
+                </ul>
+            </div>
+
+            <hr class="border-base-200 dark:border-base-800">
+
+            <!-- 2. Marco Regulatorio y Certificaciones -->
+            <div>
+                <h3 class="text-base font-semibold text-important mb-2">2. Marco Regulatorio y Certificaciones</h3>
+                <p class="text-sm text-subtle leading-relaxed mb-3">
+                    Estructurado bajo normativas locales e internacionales de control financiero y protección de datos:
+                </p>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs text-subtle">
+                        <thead>
+                            <tr class="border-b border-base-200 dark:border-base-800 bg-base-50 dark:bg-base-800/50">
+                                <th class="p-2.5 font-semibold text-important">Dimensión</th>
+                                <th class="p-2.5 font-semibold text-important">Estándar / Regulación</th>
+                                <th class="p-2.5 font-semibold text-important">Enfoque de Cumplimiento en SBA</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-base-200 dark:divide-base-800">
+                            <tr>
+                                <td class="p-2.5 font-medium text-important">Estándares Contables</td>
+                                <td class="p-2.5">NIIF / NIC (IFRS para Pymes y Full)</td>
+                                <td class="p-2.5">Plan de cuentas estructurado y estados financieros estandarizados.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 font-medium text-important">Integración Tributaria</td>
+                                <td class="p-2.5">SRI (Servicio de Rentas Internas - Ecuador)</td>
+                                <td class="p-2.5">Soporte para facturación electrónica y comprobantes XML vigentes.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 font-medium text-important">Protección de Datos</td>
+                                <td class="p-2.5">LOPDP</td>
+                                <td class="p-2.5">Control de acceso basado en roles (RBAC) y cifrado de credenciales.</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 font-medium text-important">Seguridad de Datos</td>
+                                <td class="p-2.5">Alineación ISO/IEC 27001</td>
+                                <td class="p-2.5">Sanitización de entradas, prevención OWASP Top 10 y auditorías.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <hr class="border-base-200 dark:border-base-800">
+
+            <!-- 3. Modelo Financiero Implementado y Justificación -->
+            <div>
+                <h3 class="text-base font-semibold text-important mb-2">3. Modelo Financiero Implementado y Justificación</h3>
+                <p class="text-sm text-subtle leading-relaxed mb-3">
+                    SBA EAP combina dos modelos complementarios para garantizar solvencia y planeación:
+                </p>
+                <div class="space-y-3">
+                    <div class="p-3 bg-base-50 dark:bg-base-800/50 rounded-lg border border-base-200 dark:border-base-700">
+                        <h4 class="text-xs font-semibold uppercase tracking-wider text-important mb-1">A. Finanzas Operativas (Cash Flow Directo / Gestión de Caja)</h4>
+                        <p class="text-xs text-subtle leading-relaxed">Control estricto de liquidez inmediata y arqueos de turno para evitar quiebras por descalces de caja.</p>
+                    </div>
+                    <div class="p-3 bg-base-50 dark:bg-base-800/50 rounded-lg border border-base-200 dark:border-base-700">
+                        <h4 class="text-xs font-semibold uppercase tracking-wider text-important mb-1">B. Finanzas Corporativas y Analítica de Margen (Accrual / Devengado)</h4>
+                        <p class="text-xs text-subtle leading-relaxed">Registro de obligaciones al generarse, permitiendo calcular EBITDA y márgenes operativos reales.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-base-200 dark:border-base-800">
+
+            <!-- 4. Guía Visual y Explicación Detallada del Dashboard Financiero -->
+            <div>
+                <h3 class="text-base font-semibold text-important mb-4">4. Guía Visual y Explicación Detallada de los Elementos del Dashboard</h3>
+                <p class="text-sm text-subtle leading-relaxed mb-6">
+                    El panel de control financiero de SBA v1.0 está estructurado para ofrecer visibilidad ejecutiva en tiempo real. A continuación se detallan visualmente y se explican en profundidad todos los componentes interactivos y métricas que componen el dashboard:
+                </p>
+
+                <!-- BLOQUE VISUAL 1: TARJETAS DE MÉTRICAS SUPERIORES -->
+                <div class="mb-8 p-4 bg-base-50 dark:bg-base-800/30 rounded-xl border border-base-200 dark:border-base-700 space-y-4">
+                    <div class="border-b border-base-200 dark:border-base-700 pb-2 mb-3">
+                        <h4 class="font-semibold text-xs uppercase tracking-wider text-important">A. Tarjetas de Cabecera (KPIs Financieros Principales)</h4>
+                        <p class="text-[11px] text-subtle">Miden la solvencia global, velocidad de liquidez y eficiencia de adquisición del negocio.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        <!-- Ingresos Totales -->
+                        <div class="flex flex-col gap-1 p-3 bg-white dark:bg-base-900 rounded-lg border border-base-200 dark:border-base-700 shadow-xs">
+                            <p class="leading-relaxed mb-0 text-xs text-subtle">Ingresos Totales</p>
+                            <div class="flex flex-row items-center gap-2">
+                                <div class="font-semibold text-base text-important tracking-tight">$48,500.00</div>
+                                <span class="flex flex-row gap-0.5 items-center font-normal text-[11px] text-green-700 dark:text-green-400">
+                                    <span class="material-symbols-outlined text-xs">arrow_circle_up</span>
+                                    <span>68%</span>
+                                </span>
+                            </div>
+                            <span class="text-[10px] text-subtle">Entradas brutas del periodo</span>
+                        </div>
+
+                        <!-- Egresos Totales -->
+                        <div class="flex flex-col gap-1 p-3 bg-white dark:bg-base-900 rounded-lg border border-base-200 dark:border-base-700 shadow-xs">
+                            <p class="leading-relaxed mb-0 text-xs text-subtle">Egresos Totales</p>
+                            <div class="flex flex-row items-center gap-2">
+                                <div class="font-semibold text-base text-important tracking-tight">$15,200.00</div>
+                                <span class="flex flex-row gap-0.5 items-center font-normal text-[11px] text-red-700 dark:text-red-400">
+                                    <span class="material-symbols-outlined text-xs">arrow_circle_down</span>
+                                    <span>32%</span>
+                                </span>
+                            </div>
+                            <span class="text-[10px] text-subtle">Salidas y costos operativos</span>
+                        </div>
+
+                        <!-- Utilidad Neta -->
+                        <div class="flex flex-col gap-1 p-3 bg-white dark:bg-base-900 rounded-lg border border-base-200 dark:border-base-700 shadow-xs">
+                            <p class="leading-relaxed mb-0 text-xs text-subtle">Utilidad Neta</p>
+                            <div class="flex flex-row items-center gap-2">
+                                <div class="font-semibold text-base text-important tracking-tight">$33,300.00</div>
+                                <span class="flex flex-row gap-0.5 items-center font-normal text-[11px] text-green-700 dark:text-green-400">
+                                    <span class="material-symbols-outlined text-xs">arrow_circle_up</span>
+                                    <span>45%</span>
+                                </span>
+                            </div>
+                            <span class="text-[10px] text-subtle">Ganancia neta disponible</span>
+                        </div>
+
+                        <!-- Ratio LTV:CAC -->
+                        <div class="flex flex-col gap-1 p-3 bg-white dark:bg-base-900 rounded-lg border border-base-200 dark:border-base-700 shadow-xs">
+                            <p class="leading-relaxed mb-0 text-xs text-subtle">Ratio LTV:CAC</p>
+                            <div class="flex flex-row items-center gap-2">
+                                <div class="font-semibold text-base text-important tracking-tight">4.5x</div>
+                                <span class="flex flex-row gap-0.5 items-center font-normal text-[11px] text-green-700 dark:text-green-400">
+                                    <span class="material-symbols-outlined text-xs">arrow_circle_up</span>
+                                    <span>108%</span>
+                                </span>
+                            </div>
+                            <span class="text-[10px] text-subtle">Eficiencia comercial óptima</span>
+                        </div>
+
+                        <!-- Runway -->
+                        <div class="flex flex-col gap-1 col-span-2 md:col-span-1 p-3 bg-white dark:bg-base-900 rounded-lg border border-base-200 dark:border-base-700 shadow-xs">
+                            <p class="leading-relaxed mb-0 text-xs text-subtle">Runway (Meses)</p>
+                            <div class="flex flex-row items-center gap-2">
+                                <div class="font-semibold text-base text-important tracking-tight">14.2</div>
+                                <span class="flex flex-row gap-0.5 items-center font-normal text-[11px] text-red-700 dark:text-red-400">
+                                    <span class="material-symbols-outlined text-xs">arrow_circle_down</span>
+                                    <span>2.1%</span>
+                                </span>
+                            </div>
+                            <span class="text-[10px] text-subtle">Supervivencia sin ingresos</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 text-xs text-subtle space-y-1.5 pt-2 border-t border-base-200 dark:border-base-700">
+                        <p><strong>Explicación detallada:</strong></p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><strong>Ingresos Totales ($48,500.00):</strong> Mide la entrada bruta de capital por todas las líneas de negocio en el periodo seleccionado. Permite ver el crecimiento porcentual (+68%) respecto al ciclo anterior.</li>
+                            <li><strong>Egresos Totales ($15,200.00):</strong> Acumula el total de salidas de dinero (gastos operativos, nómina, tributos y publicidad). Su indicador porcentual (+32%) mide la presión de costos.</li>
+                            <li><strong>Utilidad Neta ($33,300.00):</strong> Representa el beneficio real obtenido tras restar todos los egresos y deducciones a los ingresos. Su margen del 45% refleja la rentabilidad final del modelo.</li>
+                            <li><strong>Ratio LTV:CAC (4.5x):</strong> Evalúa la relación entre el Valor de Vida del Cliente (LTV) y su Costo de Adquisición (CAC). Un ratio superior a 3x indica una adquisición de clientes altamente rentable y sostenible.</li>
+                            <li><strong>Runway (14.2 meses):</strong> Calcula el tiempo estimado que la empresa puede operar cubriendo sus gastos actuales utilizando exclusivamente el efectivo disponible en caja, sin necesidad de captar nuevos ingresos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BLOQUE VISUAL 2: BARRA SEGMENTADA UNIFICADA -->
+                <div class="mb-8 p-4 bg-base-50 dark:bg-base-800/30 rounded-xl border border-base-200 dark:border-base-700 space-y-3">
+                    <div class="border-b border-base-200 dark:border-base-700 pb-2 mb-3">
+                        <h4 class="font-semibold text-xs uppercase tracking-wider text-important">B. Barra Segmentada Unificada (Proporción de Márgenes)</h4>
+                        <p class="text-[11px] text-subtle">Comparativa visual unificada de los márgenes críticos de rendimiento empresarial.</p>
+                    </div>
+                    
+                    <div class="flex flex-col gap-2 relative w-full pt-1">
+                        <div class="w-full bg-base-200 dark:bg-base-800 h-6 rounded-default overflow-hidden flex flex-row text-[11px] font-bold text-white">
+                            <div class="h-full bg-primary-600 dark:bg-primary-500 flex items-center justify-center px-1" style="width: 68%;">68%</div>
+                            <div class="h-full bg-base-700 dark:bg-base-300 dark:text-base-900 flex items-center justify-center px-1" style="width: 45%;">45%</div>
+                            <div class="h-full bg-base-500 dark:bg-base-600 flex items-center justify-center px-1" style="width: 82%;">82%</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 text-xs text-subtle space-y-1.5 pt-2 border-t border-base-200 dark:border-base-700">
+                        <p><strong>Explicación detallada:</strong></p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><strong>Margen Bruto (68%):</strong> Mide la eficiencia directa en la producción y entrega del servicio antes de descontar costos fijos operativos.</li>
+                            <li><strong>Margen Neto (45%):</strong> Indica la ganancia libre final que queda por cada dólar ingresado una vez cubiertas todas las obligaciones.</li>
+                            <li><strong>Rentabilidad Global (82%):</strong> Evalúa el rendimiento porcentual generado sobre el capital de operación invertido.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BLOQUE VISUAL 3: GRÁFICOS ESPECIALIZADOS (3 Columnas) -->
+                <div class="space-y-4">
+                    <div class="border-b border-base-200 dark:border-base-700 pb-2 mb-3">
+                        <h4 class="font-semibold text-xs uppercase tracking-wider text-important">C. Gráficos Analíticos Especializados (Donas, Torta y Radar / Spider Map)</h4>
+                        <p class="text-[11px] text-subtle">Desglose analítico de gastos, fuentes de ingresos y comportamiento multidimensional de KPIs.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Gráfico 1: Dona (Gastos) -->
+                        <div class="p-4 bg-white dark:bg-base-900 rounded-lg border border-base-200 dark:border-base-700 flex flex-col justify-between space-y-3">
+                            <div>
+                                <h5 class="text-xs font-semibold text-important mb-1">Distribución de Gastos (Dona)</h5>
+                                <p class="text-[11px] text-subtle mb-2">Mide las salidas por Operativos ($6,200), Nómina ($5,400), Tributarios ($2,100) y Publicidad ($1,500).</p>
+                                
+                                <!-- Elemento Visual Integrado -->
+                                <div class="my-3 py-2 flex items-center justify-center bg-base-50 dark:bg-base-800/50 rounded border border-base-200 dark:border-base-700">
+                                    <div class="relative w-full px-4">
+                                        <canvas class="chart" data-type="doughnut" data-value='{"labels": ["Operativos", "Nómina", "Tributarios", "Publicidad"], "datasets": [{"data": [6200, 5400, 2100, 1500], "backgroundColor": ["var(--color-primary-900)", "var(--color-primary-700)", "var(--color-primary-500)", "var(--color-primary-300)"]}]}' style="display: block; box-sizing: border-box; height: 160px; width: 100%;"></canvas>
+                                    </div>
+                                </div>
+
+                                <p class="text-[11px] text-subtle leading-relaxed"><strong>Qué mide y por qué importa:</strong> Permite auditar qué centros de costo concentran el gasto fijo ($11,600) para aplicar correctivos en presupuesto sin afectar la operación.</p>
+                            </div>
+                            <div class="text-[11px] text-important font-semibold pt-2 border-t border-base-200 dark:border-base-800">
+                                Total Egresos: $15,200.00
+                            </div>
+                        </div>
+
+                        <!-- Gráfico 2: Torta (Ingresos) -->
+                        <div class="p-4 bg-white dark:bg-base-900 rounded-lg border border-base-200 dark:border-base-700 flex flex-col justify-between space-y-3">
+                            <div>
+                                <h5 class="text-xs font-semibold text-important mb-1">Distribución de Ingresos (Pie)</h5>
+                                <p class="text-[11px] text-subtle mb-2">Clasifica facturación entre Ventas Cloud ($32k), B2B ($11k), Licenciamiento ($4.2k) y Otros ($1.3k).</p>
+                                
+                                <!-- Elemento Visual Integrado -->
+                                <div class="my-3 py-2 flex items-center justify-center bg-base-50 dark:bg-base-800/50 rounded border border-base-200 dark:border-base-700">
+                                    <div class="relative w-full px-4">
+                                        <canvas class="chart" data-type="pie" data-value='{"labels": ["Ventas Cloud", "Servicios B2B", "Licenciamiento", "Otros"], "datasets": [{"data": [32000, 11000, 4200, 1300], "backgroundColor": ["var(--color-primary-800)", "var(--color-primary-600)", "var(--color-primary-400)", "var(--color-primary-200)"]}]}' style="display: block; box-sizing: border-box; height: 160px; width: 100%;"></canvas>
+                                    </div>
+                                </div>
+
+                                <p class="text-[11px] text-subtle leading-relaxed"><strong>Qué mide y por qué importa:</strong> Evalúa la diversificación comercial y detecta qué canal aporta mayor peso a la utilidad neta, previeniéndose de depender de una sola fuente.</p>
+                            </div>
+                            <div class="text-[11px] text-important font-semibold pt-2 border-t border-base-200 dark:border-base-800">
+                                Total Ingresos: $48,500.00
+                            </div>
+                        </div>
+
+                        <!-- Gráfico 3: Radar / Spider Map -->
+                        <div class="p-4 bg-white dark:bg-base-900 rounded-lg border border-base-200 dark:border-base-700 flex flex-col justify-between space-y-3">
+                            <div>
+                                <h5 class="text-xs font-semibold text-important mb-1">Métricas Operativas (Spider Map / KPIs)</h5>
+                                <p class="text-[11px] text-subtle mb-2">Evalúa en polígono de 5 ejes: Liquidez (85), Retención (92), Eficiencia (78), Margen (88) y Solvencia (90).</p>
+                                
+                                <!-- Elemento Visual Integrado -->
+                                <div class="my-3 py-2 flex items-center justify-center bg-base-50 dark:bg-base-800/50 rounded border border-base-200 dark:border-base-700">
+                                    <div class="relative w-full px-4">
+                                        <canvas class="chart" data-type="radar" data-value='{"labels": ["Liquidez", "Retención", "Eficiencia", "Margen", "Solvencia"], "datasets": [{"label": "SBA v1.0", "data": [85, 92, 78, 88, 90], "backgroundColor": "rgba(220, 38, 38, 0.2)", "borderColor": "rgb(220, 38, 38)"}]}' style="display: block; box-sizing: border-box; height: 160px; width: 100%;"></canvas>
+                                    </div>
+                                </div>
+
+                                <p class="text-[11px] text-subtle leading-relaxed"><strong>Qué mide y por qué importa:</strong> El gráfico de radar o mapa de araña cruza múltiples dimensiones de rendimiento simultáneamente para detectar desequilibrios estructurales en la gestión.</p>
+                            </div>
+                            <div class="text-[11px] text-important font-semibold pt-2 border-t border-base-200 dark:border-base-800">
+                                Payback Period: 4.2 meses
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOQUE VISUAL 4: TARJETAS DE ACCESOS RÁPIDOS -->
+                <div class="mt-8 p-4 bg-base-50 dark:bg-base-800/30 rounded-xl border border-base-200 dark:border-base-700 space-y-4">
+                    <div class="border-b border-base-200 dark:border-base-700 pb-2 mb-3">
+                        <h4 class="font-semibold text-xs uppercase tracking-wider text-important">D. Bloque de Accesos Rápidos (Navegación del Sistema)</h4>
+                        <p class="text-[11px] text-subtle">Enlaces directos hacia los módulos operativos del sistema de gestión.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <!-- Tarjeta 1: Estados Financieros -->
+                        <div class="bg-white dark:bg-base-900 border border-base-200 dark:border-base-800 rounded-xl p-4 shadow-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold text-important">Estados Financieros</span>
+                                <span class="material-symbols-outlined text-base text-primary-600">account_balance</span>
+                            </div>
+                            <p class="text-[11px] text-subtle">Módulo destinado a auditorías, cierres contables periódicos y balances generales.</p>
+                        </div>
+
+                        <!-- Tarjeta 2: Movimientos Unificados -->
+                        <div class="bg-white dark:bg-base-900 border border-base-200 dark:border-base-800 rounded-xl p-4 shadow-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold text-important">Movimientos</span>
+                                <span class="material-symbols-outlined text-base text-primary-600">receipt_long</span>
+                            </div>
+                            <p class="text-[11px] text-subtle">Registro centralizado de ingresos y egresos globales de la compañía.</p>
+                        </div>
+
+                        <!-- Tarjeta 3: Cambios Patrimoniales -->
+                        <div class="bg-white dark:bg-base-900 border border-base-200 dark:border-base-800 rounded-xl p-4 shadow-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold text-important">Cambios Patrimoniales</span>
+                                <span class="material-symbols-outlined text-base text-primary-600">trending_up</span>
+                            </div>
+                            <p class="text-[11px] text-subtle">Seguimiento detallado de activos, pasivos y variaciones del patrimonio.</p>
+                        </div>
+
+                        <!-- Tarjeta 4: Flujo de Caja -->
+                        <div class="bg-white dark:bg-base-900 border border-base-200 dark:border-base-800 rounded-xl p-4 shadow-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold text-important">Flujo de Caja</span>
+                                <span class="material-symbols-outlined text-base text-primary-600">payments</span>
+                            </div>
+                            <p class="text-[11px] text-subtle">Control de liquidez, facturación diaria y comportamiento operativo de efectivo.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-base-200 dark:border-base-800">
+
+            <!-- 5. Movimientos Financieros -->
+            <div>
+                <h3 class="text-base font-semibold text-important mb-2">5. Movimientos Financieros</h3>
+                <p class="text-sm text-subtle leading-relaxed">
+                    Sección para el registro flexible de asientos contables clasificados según periodicidad (por unidad, diarios o mensuales) y naturaleza (ventas, inversiones, gastos operativos o tributarios).
+                </p>
+            </div>
+
+            <hr class="border-base-200 dark:border-base-800">
+
+            <!-- 6. Control de Caja Registradora -->
+            <div>
+                <h3 class="text-base font-semibold text-important mb-2">6. Control de Caja Registradora</h3>
+                <p class="text-sm text-subtle leading-relaxed">
+                    Módulo de turnos que habilita aperturas con fondos iniciales, registro en tiempo real de medios de pago (efectivo, tarjetas, transferencias) y cierres automatizados con arqueos y detección de diferencias.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

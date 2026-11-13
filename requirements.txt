@@ -1,0 +1,48 @@
+# === Core Django & Base ===
+Django>=5.1,<5.2
+python-decouple>=3.8
+django-extensions>=3.2.3
+
+# === Base de Datos & Soporte Vectorial / Analítico ===
+psycopg[binary]>=3.2.0
+pgvector>=0.3.0
+
+# === Admin & UI ===
+django-unfold>=0.45.0
+django-widget-tweaks>=1.5.0
+django-import-export>=4.0.0
+
+# === Gestión Financiera, ERP & Auditoría Contable ===
+django-money>=3.5.0
+django-fsm>=3.0.0
+django-simple-history>=3.7.0
+
+# === Ciencia de Datos, Analíticas, Google APIs & gRPC ===
+pandas>=2.2.0
+numpy>=1.26.0
+scipy>=1.12.0
+matplotlib>=3.8.0
+#google-analytics-data>=0.18.0
+protobuf>=5.26.0
+#google-auth>=2.29.0
+#google-api-core>=2.18.0
+grpcio>=1.62.0
+
+# === Reportes, Documentos & Exportaciones (PDF/Excel) ===
+XlsxWriter>=3.2.0
+weasyprint>=61.0
+
+# === Tareas Asíncronas & Caché (Celery + Redis) ===
+celery>=5.3.6
+redis>=5.0.3
+django-redis>=5.4.0
+django-celery-beat>=2.7.0
+django-celery-results>=2.5.1
+
+# === Servidor WSGI & Desarrollo ===
+gunicorn>=22.0.0
+#uWSGI==2.0.24
+django-debug-toolbar>=4.3.0
+
+# === Utilidades & Códigos QR ===
+qrcode>=7.4.2
